@@ -1,0 +1,16 @@
+lst=[]
+while True:
+    value = input()
+    
+    if value == "end":
+        break
+    row = [int(i) for i in value.split()]
+    lst.append(row)
+for i in range(len(lst)):
+    for j in range(len(lst[i])):
+        sum = [[[lst[(i-1) % len(lst)][j] + lst[(i+1) % len(lst)][j] + lst[i][(j-1) % len(lst[i])] + lst[i][(j+1) % len(lst[i])]]for j in range(len(lst[i]))]for i in range(len(lst))]
+
+for i in range(len(lst)):
+    for j in range(len(lst[i])):
+        print(* sum[i][j] , end = " " , sep = " ")
+    print()
